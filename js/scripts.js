@@ -12,9 +12,8 @@ let pokemonList = [
 //set up the conditional so that only one Pokémon has the label “Wow, that’s big!”
 //example: “Bulbasaur (height: 7) - Wow, that’s big!”
 
-for (let i=0; i<pokemonList.length; i++){
-  document.write (pokemonList[i].name + ' (height: ' + pokemonList[i].height + ')');
-  if (pokemonList[i].height > 1.0){
-  document.write (" - Wow, that's a big one!");
-  }
-}
+pokemonList.forEach(function(pokemon) {
+document.write(pokemon.name + ' (height: ' + pokemon.height + ')');
+if (pokemon.height > 1.0){
+document.write (" - Wow, that's a big one!");
+}});
