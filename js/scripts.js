@@ -4,16 +4,33 @@ let pokemonList = [
   {name: "Jigglypuff", height: 0.5, types: ['fairy', 'normal']}
 ];
 
-//Use document.write() 
-//for example, “Bulbasaur (height: 7)”
+let pokemonRepository = (function (){
+  let pokemonList = [];
 
-//check if the height is above a certain value
-//if yes= "Wow, that's big!"
-//set up the conditional so that only one Pokémon has the label “Wow, that’s big!”
-//example: “Bulbasaur (height: 7) - Wow, that’s big!”
+  function add(pokemon) {
+    pokemonList.push(pokemon);
+    // adds one pokemon to the pokemonList
+  }
 
-pokemonList.forEach(function(pokemon) {
-document.write(pokemon.name + ' (height: ' + pokemon.height + ')');
-if (pokemon.height > 1.0){
-document.write (" - Wow, that's a big one!");
-}});
+function getAll () {
+  return pokemonList;
+  // returns all pokemon in the pokemonList
+}
+
+return{
+  add: add,
+  getAll: getAll
+};
+
+pokemonRepository.getAll().forEach(function(pokemon) {
+  console.log(pokemon.name);
+})});
+
+(function() {
+  pokemonList.forEach(function(pokemon) {
+      document.write(pokemon.name + ' (height: ' + pokemon.height + ')');
+      if (pokemon.height > 1.0){
+          document.write(" - Wow, that's a big one!");
+      }
+  });
+})();
