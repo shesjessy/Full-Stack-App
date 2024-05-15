@@ -14,16 +14,35 @@ function getAll() {
   return pokemonList;
 }
 
-return {
+//create function named addListItem() inside IIFE w/ parameter named pokemon
+//cut code from forEach loop, moved to addListItem() function
+function addListItem(pokemon) {
+  let ulElement = document.querySelector('.pokemon-list'); //variable assigned
+  //loop block emptied
+  let liElement = document.createElement('li'); //create li element
+  let button = document.createElement('button'); //create button element
+  button.innerText = pokemon.name; //set button innerText to pokemon's name
+  button.classList.add('pokemon-button'); //added class to button
+  liElement.appendChild(button); // append button to li element
+  ulElement.appendChild(liElement); // append li element to ul
+
+//add event listener
+button.addEventListener('click', function() {
+  showDetails(pokemon);
+});
+
+//create function called showDetails()
+function showDetails(pokemon){
+  console.log(pokemon);
+}
+
+  return {
   getAll: getAll,
   add: add,
+  addListItem: addListItem 
 };
-})();
+}})();
 
 pokemonRepository.getAll().forEach(function (pokemon) {
-  document.write(pokemon.name + " (height: " + pokemon.height + ")");
-  if (pokemon.height > 1.0) {
-    document.write(" - Wow that's a big one!");
-  }
-  document.write("<br>");
+  pokemonRepository.addListItem(pokemon);
 });
