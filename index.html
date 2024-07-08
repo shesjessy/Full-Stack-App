@@ -3,17 +3,83 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>JB's Poxedex App</title>
+        <title>JB's Pokedex App</title>
+        <!-- Bootstrap CSS - Ensures that Bootstrap styling is applied -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous"
+        />
+        <!-- Link to my custom stylesheet -->
         <link href="css/styles.css" rel="stylesheet" type="text/css" />
     </head>
 
     <body>
-        <ul class="pokemon-list"></ul>
-        <button id="show-modal">Show modal</button>
-        <div id="modal-container"></div>
+        <!-- Updated Bootstrap Navbar for site navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">JB's Pokedex App</a>
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#"
+                            >Home</a
+                        >
+                    </li>
+                </ul>
+            </div>
+        </nav>
 
+        <!-- Main container that aligns content with a top margin -->
+        <div class="container text-center mt-3">
+            <!-- List group to display Pokémon entries -->
+            <ul class="pokemon-list row" alt="List of Pokemon"></ul>
+        </div>
+
+        <!-- Bootstrap Modal for displaying Pokémon details -->
+        <div
+            class="modal fade"
+            id="pokemonModal"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="pokemonModalLabel"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="pokemonModalLabel"></h5>
+                        <button
+                            type="button"
+                            class="close"
+                            data-dismiss="modal"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+                    <div class="modal-body"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scripts necessary for Bootstrap components to function -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"></script>
+        <!-- Polyfills to ensure compatibility with older browsers -->
         <script src="js/promise-polyfill.js"></script>
         <script src="js/fetch-polyfill.js"></script>
+        <!-- Main script for the app's functionality -->
         <script src="js/scripts.js"></script>
     </body>
 </html>
