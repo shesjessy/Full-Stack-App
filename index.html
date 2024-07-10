@@ -4,6 +4,8 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>JB's Pokedex App</title>
+        <link rel="icon" href="images/favicon.ico" type="image/png" />
+
         <!-- Bootstrap CSS - Ensures that Bootstrap styling is applied -->
         <link
             rel="stylesheet"
@@ -12,7 +14,7 @@
             crossorigin="anonymous"
         />
         <!-- Link to my custom stylesheet -->
-        <link href="css/styles.css" rel="stylesheet" type="text/css" />
+        <link href="dist/styles.min.css" rel="stylesheet" type="text/css" />
     </head>
 
     <body>
@@ -43,6 +45,15 @@
 
         <!-- Main container that aligns content with a top margin -->
         <div class="container text-center mt-3">
+            <!-- Dropdown for sorting Pokémon -->
+            <div class="mb-3">
+                <label for="sort-options">Sort by:</label>
+                <select id="sort-options" class="custom-select w-auto">
+                    <option value="pokedex">Pokedex Number</option>
+                    <option value="name-asc">Name (A-Z)</option>
+                    <option value="name-desc">Name (Z-A)</option>
+                </select>
+            </div>
             <!-- List group to display Pokémon entries -->
             <ul class="pokemon-list row" alt="List of Pokemon"></ul>
         </div>
@@ -80,6 +91,6 @@
         <script src="js/promise-polyfill.js"></script>
         <script src="js/fetch-polyfill.js"></script>
         <!-- Main script for the app's functionality -->
-        <script src="js/scripts.js"></script>
+        <script src="dist/scripts.min.js"></script>
     </body>
 </html>

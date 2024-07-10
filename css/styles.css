@@ -3,6 +3,23 @@ body {
 }
 
 .pokemon-list {
-    list-style-type: none;
-    padding: 0;
+    list-style-type: none; /* Remove bullets */
+    padding: 0; /* Remove default padding */
+}
+
+.pokemon-button {
+    height: 150px; /* Set a height for the button to show the image */
+    display: flex;
+    align-items: none;
+    justify-content: center;
+    background-color: rgba(
+        0,
+        123,
+        255,
+        0.8
+    ); /* Adjust background color if needed */
+}
+
+.pokemon-name {
+    font-weight: bold;
 }

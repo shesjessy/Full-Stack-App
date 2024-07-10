@@ -1,0 +1,17 @@
+body {
+    font-family: Arial, sans-serif;
+}
+.pokemon-list {
+    list-style-type: none;
+    padding: 0;
+}
+.pokemon-button {
+    height: 150px;
+    display: flex;
+    align-items: none;
+    justify-content: center;
+    background-color: rgba(0, 123, 255, 0.8);
+}
+.pokemon-name {
+    font-weight: 700;
+}
